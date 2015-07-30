@@ -167,3 +167,7 @@ go-buildpack/go_buildpack-cached-v1.5.0.zip:
   object_id: 95b17554-1ac2-4c2a-8359-664fe5cbabc7
   sha: fd76bdda73b6b75cd038ac5b768d187156adb363
   size: 443150460
+openjdk/openjdk-1.8.0_51.tar.gz:
+  object_id: d85dd2e6-cb0c-45a7-a089-b24a778878ad
+  sha: 2651c262b7cede077da23e00d3fe6ffd9849a1d6
+  size: 44707537
