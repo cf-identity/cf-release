@@ -307,7 +307,7 @@ jobs:
       routes:
       - name: uaa
         port: 8080
-        registration_interval: 20s
+        registration_interval: 4s
         tags:
           component: uaa
         uris:
@@ -315,6 +315,9 @@ jobs:
         - '*.uaa.bosh-lite.com'
         - login.bosh-lite.com
         - '*.login.bosh-lite.com'
+        health_check:
+          name: uaa-healthcheck
+          script_path: /var/vcap/jobs/uaa/bin/health_check
     uaa:
       proxy:
         servers:
@@ -347,7 +350,7 @@ jobs:
       routes:
       - name: uaa
         port: 8080
-        registration_interval: 20s
+        registration_interval: 4s
         tags:
           component: uaa
         uris:
@@ -355,6 +358,9 @@ jobs:
         - '*.uaa.bosh-lite.com'
         - login.bosh-lite.com
         - '*.login.bosh-lite.com'
+        health_check:
+          name: uaa-healthcheck
+          script_path: /var/vcap/jobs/uaa/bin/health_check
     uaa:
       proxy:
         servers:
