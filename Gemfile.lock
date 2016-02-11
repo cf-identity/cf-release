@@ -180,6 +180,3 @@ DEPENDENCIES
   bosh_cli
   git_release_notes!
   rspec (~> 3.0)
-
-BUNDLED WITH
-   1.10.5

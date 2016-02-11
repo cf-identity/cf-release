@@ -143,11 +143,11 @@ java-buildpack/java-buildpack-v3.6.zip:
   object_id: 957d975c-43de-4c1e-83a0-6df8f1a2eb1b
   sha: 3ddf6855baec15fb97cd486312615ce82a354dba
   size: 164535
-openjdk/openjdk-1.8.0_71-x86_64-mountainlion.tar.gz:
-  object_id: d324075f-c2ed-4b97-9a5d-ec8b630cb6cb
-  sha: 04f0d7b981b2235812b3c5c92c844e72bc260111
-  size: 81948801
-openjdk/openjdk-1.8.0_71-x86_64-trusty.tar.gz:
-  object_id: c038d3dc-abd2-43cc-9f9b-dd8c97996788
-  sha: 323b23254438c9ab7f8342b4ec0aea39324b9aaa
-  size: 77625440
+openjdk/openjdk-1.8.0_73-x86_64-mountainlion.tar.gz:
+  object_id: 0abed19b-8637-457f-857e-2890d9aa7136
+  sha: f5b5ddc984db76deff3cf2a32cf37a532509be2a
+  size: 43982327
+openjdk/openjdk-1.8.0_73-x86_64-trusty.tar.gz:
+  object_id: e40958e7-d860-4788-a221-42cccc179d8f
+  sha: 0a4a1540910085995cf12b111d815ec8192977dd
+  size: 45102657
