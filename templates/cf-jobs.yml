@@ -200,7 +200,7 @@ meta:
   uaa_routes:
   - name: uaa
     port: (( .properties.uaa.port ))
-    registration_interval: 20s
+    registration_interval: 4s
     tags:
       component: uaa
     uris:
