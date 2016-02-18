@@ -144,10 +144,10 @@ rootfs/cflinuxfs2-1.36.0.tar.gz:
   sha: 5d740369f9e00bb7c91c4b8fd49d1abfc38cc97f
   size: 258509264
 openjdk/openjdk-1.8.0_73-x86_64-mountainlion.tar.gz:
-  object_id: 0abed19b-8637-457f-857e-2890d9aa7136
-  sha: f5b5ddc984db76deff3cf2a32cf37a532509be2a
-  size: 43982327
+  object_id: 3a368e4a-778b-4249-a70e-80a857fc2ccd
+  sha: 9fe451af7b0497d195be197d1813b109a7bce600
+  size: 81961289
 openjdk/openjdk-1.8.0_73-x86_64-trusty.tar.gz:
-  object_id: e40958e7-d860-4788-a221-42cccc179d8f
-  sha: 0a4a1540910085995cf12b111d815ec8192977dd
-  size: 45102657
+  object_id: 3965990f-eb2e-4f1e-8561-22f0f4fc6769
+  sha: 251144ff72db0b9c2f73446cbb0549b0ecf3d499
+  size: 77620313
