@@ -116,8 +116,10 @@ properties:
     diego: (( merge || false ))
 
   uaa:
+    <<: (( merge ))
     catalina_opts: -Xmx192m -XX:MaxPermSize=128m
     jwt:
+      <<: (( merge || nil ))
       signing_key: |
         -----BEGIN RSA PRIVATE KEY-----
         MIICXAIBAAKBgQDHFr+KICms+tuT1OXJwhCUmR2dKVy7psa8xzElSyzqx7oJyfJ1
@@ -142,6 +144,7 @@ properties:
         spULZVNRxq7veq/fzwIDAQAB
         -----END PUBLIC KEY-----
     ssl:
+      <<: (( merge || nil ))
       port: 8443
     sslCertificate: |
       -----BEGIN CERTIFICATE-----
@@ -225,9 +228,10 @@ properties:
       tcp_router:
         secret: tcp-router-secret
     scim:
+      <<: (( merge || nil ))
       users:
-      - admin|admin|scim.write,scim.read,openid,cloud_controller.admin,clients.read,clients.write,doppler.firehose,routing.router_groups.read
-
+        - <<: (( merge || nil ))
+        - admin|admin|scim.write,scim.read,openid,cloud_controller.admin,clients.read,clients.write,doppler.firehose,routing.router_groups.read
   router:
     status:
       user: router
