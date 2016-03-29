@@ -3263,41 +3263,115 @@ properties:
   loggregator_endpoint:
     shared_secret: LOGGREGATOR_ENDPOINT_SHARED_SECRET
   login:
-    analytics:
-      code: null
-      domain: null
-    asset_base_url: null
     brand: oss
-    catalina_opts: null
     enabled: true
-    invitations_enabled: null
+    url: login_url
+    protocol: https
+    branding:
+      company_name: company_name
+      product_logo: product_logo
+      square_logo: square_logo
+      footer_legal_text: footer_legal_text
+      footer_links:
+        link1: link_value1
+        link2: link_value2
+    asset_base_url: asset_base_url
     links:
-      passwd: https://console.bosh-lite.com/password_resets/new
-      signup: https://console.bosh-lite.com/register
+      passwd: passwd
+      signup: signup
+      home_redirect: home_redirect
+    self_service_links_enabled: false
+    analytics:
+      domain: analytics_domain
+      code: analytics_code
+    messages:
+        scope:
+          tokens:
+            read: View details of your approvals you have granted to this and other applications
+            write: Cancel the approvals like this one that you have granted to this and other applications
     logout:
       redirect:
+        url: "/login?template=warden"
         parameter:
           disable: false
           whitelist:
-          - https://testapp.bosh-lite.com/logout/success
-        url: /login?template=warden
-    messages: null
+            - https://testapp.bosh-lite.com/logout/success1
+            - https://testapp.bosh-lite.com/logout/success2
     notifications:
-      url: null
-    protocol: null
-    restricted_ips_regex: null
-    saml: null
-    self_service_links_enabled: null
-    signups_enabled: null
+      url: notifications_url
+    prompt:
+      username:
+        text: prompt_username_text
+      password:
+        text: prompt_password_text
     smtp:
-      host: null
-      password: null
-      port: null
-      user: null
-    spring_profiles: null
-    tiles: null
-    uaa_base: null
-    url: null
+      host: smtp_host
+      port: 25
+      user: smtp_user
+      password: smtp_password
+    saml:
+      entityid: test-entity-id
+      entity_base_url: http://test-entity-id
+      serviceProviderKey: |
+        -----BEGIN RSA PRIVATE KEY-----
+        MIICXgIBAAKBgQDfTLadf6QgJeS2XXImEHMsa+1O7MmIt44xaL77N2K+J/JGpfV3
+        AnkyB06wFZ02sBLB7hko42LIsVEOyTuUBird/3vlyHFKytG7UEt60Fl88SbAEfsU
+        JN1i1aSUlunPS/NCz+BKwwKFP9Ss3rNImE9Uc2LMvGy153LHFVW2zrjhTwIDAQAB
+        AoGBAJDh21LRcJITRBQ3CUs9PR1DYZPl+tUkE7RnPBMPWpf6ny3LnDp9dllJeHqz
+        a3ACSgleDSEEeCGzOt6XHnrqjYCKa42Z+Opnjx/OOpjyX1NAaswRtnb039jwv4gb
+        RlwT49Y17UAQpISOo7JFadCBoMG0ix8xr4ScY+zCSoG5v0BhAkEA8llNsiWBJF5r
+        LWQ6uimfdU2y1IPlkcGAvjekYDkdkHiRie725Dn4qRiXyABeaqNm2bpnD620Okwr
+        sf7LY+BMdwJBAOvgt/ZGwJrMOe/cHhbujtjBK/1CumJ4n2r5V1zPBFfLNXiKnpJ6
+        J/sRwmjgg4u3Anu1ENF3YsxYabflBnvOP+kCQCQ8VBCp6OhOMcpErT8+j/gTGQUL
+        f5zOiPhoC2zTvWbnkCNGlqXDQTnPUop1+6gILI2rgFNozoTU9MeVaEXTuLsCQQDC
+        AGuNpReYucwVGYet+LuITyjs/krp3qfPhhByhtndk4cBA5H0i4ACodKyC6Zl7Tmf
+        oYaZoYWi6DzbQQUaIsKxAkEA2rXQjQFsfnSm+w/9067ChWg46p4lq5Na2NpcpFgH
+        waZKhM1W0oB8MX78M+0fG3xGUtywTx0D4N7pr1Tk2GTgNw==
+        -----END RSA PRIVATE KEY-----
+      serviceProviderKeyPassword: serviceProviderKeyPassword
+      serviceProviderCertificate: |
+        -----BEGIN CERTIFICATE-----
+        MIIEJTCCA46gAwIBAgIJANIqfxWTfhpkMA0GCSqGSIb3DQEBBQUAMIG+MQswCQYD
+        VQQGEwJVUzETMBEGA1UECBMKQ2FsaWZvcm5pYTEWMBQGA1UEBxMNU2FuIEZyYW5j
+        aXNjbzEdMBsGA1UEChMUUGl2b3RhbCBTb2Z0d2FyZSBJbmMxJDAiBgNVBAsTG0Ns
+        b3VkIEZvdW5kcnkgSWRlbnRpdHkgVGVhbTEcMBoGA1UEAxMTaWRlbnRpdHkuY2Yt
+        YXBwLmNvbTEfMB0GCSqGSIb3DQEJARYQbWFyaXNzYUB0ZXN0Lm9yZzAeFw0xNTA1
+        MTQxNzE5MTBaFw0yNTA1MTExNzE5MTBaMIG+MQswCQYDVQQGEwJVUzETMBEGA1UE
+        CBMKQ2FsaWZvcm5pYTEWMBQGA1UEBxMNU2FuIEZyYW5jaXNjbzEdMBsGA1UEChMU
+        UGl2b3RhbCBTb2Z0d2FyZSBJbmMxJDAiBgNVBAsTG0Nsb3VkIEZvdW5kcnkgSWRl
+        bnRpdHkgVGVhbTEcMBoGA1UEAxMTaWRlbnRpdHkuY2YtYXBwLmNvbTEfMB0GCSqG
+        SIb3DQEJARYQbWFyaXNzYUB0ZXN0Lm9yZzCBnzANBgkqhkiG9w0BAQEFAAOBjQAw
+        gYkCgYEA30y2nX+kICXktl1yJhBzLGvtTuzJiLeOMWi++zdivifyRqX1dwJ5MgdO
+        sBWdNrASwe4ZKONiyLFRDsk7lAYq3f975chxSsrRu1BLetBZfPEmwBH7FCTdYtWk
+        lJbpz0vzQs/gSsMChT/UrN6zSJhPVHNizLxstedyxxVVts644U8CAwEAAaOCAScw
+        ggEjMB0GA1UdDgQWBBSvWY/TyHysYGxKvII95wD/CzE1AzCB8wYDVR0jBIHrMIHo
+        gBSvWY/TyHysYGxKvII95wD/CzE1A6GBxKSBwTCBvjELMAkGA1UEBhMCVVMxEzAR
+        BgNVBAgTCkNhbGlmb3JuaWExFjAUBgNVBAcTDVNhbiBGcmFuY2lzY28xHTAbBgNV
+        BAoTFFBpdm90YWwgU29mdHdhcmUgSW5jMSQwIgYDVQQLExtDbG91ZCBGb3VuZHJ5
+        IElkZW50aXR5IFRlYW0xHDAaBgNVBAMTE2lkZW50aXR5LmNmLWFwcC5jb20xHzAd
+        BgkqhkiG9w0BCQEWEG1hcmlzc2FAdGVzdC5vcmeCCQDSKn8Vk34aZDAMBgNVHRME
+        BTADAQH/MA0GCSqGSIb3DQEBBQUAA4GBAL5j1JCN5EoXMOOBSBUL8KeVZFQD3Nfy
+        YkYKBatFEKdBFlAKLBdG+5KzE7sTYesn7EzBISHXFz3DhdK2tg+IF1DeSFVmFl2n
+        iVxQ1sYjo4kCugHBsWo+MpFH9VBLFzsMlP3eIDuVKe8aPXFKYCGhctZEJdQTKlja
+        lshe50nayKrT
+        -----END CERTIFICATE----
+      providers:
+        my-identity-provider:
+          metadataTrustCheck: false
+          idpMetadata: http://my.identityprovider.com/saml2/idp/metadata.php
+          nameID: urn:oasis:names:tc:SAML:1.1:nameid-format:emailAddress
+          assertionConsumerIndex: 0
+          signMetaData: false
+          signRequest: false
+          iconUrl: https://my.identityprovider.com/icon.png
+          showSamlLoginLink: true
+          linkText: Log in with My Saml Identity Provider
+      socket:
+        connectionManagerTimeout: 20000
+        soTimeout: 20000
+      signMetaData: false
+      signRequest: false
+      wantAssertionSigned: false
   metron_agent:
     buffer_size: null
     deployment: cf-warden
@@ -3419,14 +3493,101 @@ properties:
     zone: null
     disable_access_control: null
   uaa:
+    url: https://uaa.bosh-lite.com
+    catalina_opts: -Xmx1024m
+    zones:
+      internal:
+        hostnames:
+          - host4
+          - host5.test.com
+    restricted_ips_regex: "10\\.\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}|192\\.168\\.\\d{1,3}\\.\\d{1,3}"
+    proxy_ips_regex: "192\\.168\\.\\d{1,3}\\.\\d{1,3}|10\\.\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}"
+    newrelic:
+      production:
+        license_key: '<yourlicensekeyhere>'
+        agent_enabled: true
+        app_name: UAA Identity Acceptance
+        high_security: false
+        enable_auto_app_naming: false
+        enable_auto_transaction_naming: true
+        log_level: info
+        audit_mode: false
+        log_file_count: 1
+        log_limit_in_kbytes: 0
+        log_daily: false
+        log_file_name: newrelic_agent.log
+        #log_file_path:
+        ssl: true
+        max_stack_trace_lines: 30
+        attributes:
+          enabled: true
+        transaction_tracer:
+          enabled: true
+          transaction_threshold: apdex_f
+          record_sql: obfuscated
+          log_sql: false
+          stack_trace_threshold: 0.5
+          explain_enabled: true
+          explain_threshold: 0.5
+          top_n: 20
+        error_collector:
+          enabled: true
+          ignore_errors: akka.actor.ActorKilledException
+          ignore_status_codes: 404
+        analytics_events:
+          enabled: true
+          max_samples_stored: 2000
+        cross_application_tracer:
+          enabled: true
+        thread_profiler:
+          enabled: true
+        browser_monitoring:
+          auto_instrument: true
+    dump_requests: true
+    issuer: (( url ))
+    logging_level: TRACE
+    logging_use_rfc3339: true
+    require_https: false
+    ssl:
+      port: 9443
+    sslCertificate: |
+      -----BEGIN CERTIFICATE-----
+      MIIDAjCCAmugAwIBAgIJAJtrcBsKNfWDMA0GCSqGSIb3DQEBCwUAMIGZMQswCQYD
+      VQQGEwJVUzETMBEGA1UECAwKQ2FsaWZvcm5pYTEWMBQGA1UEBwwNU2FuIEZyYW5j
+      aXNjbzEQMA4GA1UECgwHUGl2b3RhbDERMA8GA1UECwwISWRlbnRpdHkxFjAUBgNV
+      BAMMDU1hcmlzc2EgS29hbGExIDAeBgkqhkiG9w0BCQEWEW1rb2FsYUBwaXZvdGFs
+      LmlvMB4XDTE1MDczMDE5Mzk0NVoXDTI1MDcyOTE5Mzk0NVowgZkxCzAJBgNVBAYT
+      AlVTMRMwEQYDVQQIDApDYWxpZm9ybmlhMRYwFAYDVQQHDA1TYW4gRnJhbmNpc2Nv
+      MRAwDgYDVQQKDAdQaXZvdGFsMREwDwYDVQQLDAhJZGVudGl0eTEWMBQGA1UEAwwN
+      TWFyaXNzYSBLb2FsYTEgMB4GCSqGSIb3DQEJARYRbWtvYWxhQHBpdm90YWwuaW8w
+      gZ8wDQYJKoZIhvcNAQEBBQADgY0AMIGJAoGBAPVOIGvG8MFbkqi+ytdBHVbEGde4
+      jaCphmvGm89/4Ks0r+041VsS55XNYnHsxXTlh1FiB2KcbrDb33pgvuAIYpcAO2I0
+      gqGeRoS2hNsxzcFdkgSZn1umDAeoE4bCATrquN93KMcw/coY5jacUfb9P2CQztkS
+      e2o+QWtIaWYAvI3bAgMBAAGjUDBOMB0GA1UdDgQWBBTkEjA4CEjevAGfnPBciyXC
+      3v4zMzAfBgNVHSMEGDAWgBTkEjA4CEjevAGfnPBciyXC3v4zMzAMBgNVHRMEBTAD
+      AQH/MA0GCSqGSIb3DQEBCwUAA4GBAIEd8U32tkcvwG9qCOfe5raBENHM4ltTuhju
+      zZWIM5Ik1bFf6+rA71HVDD1Z5fRozidhMOl6mrrGShfu6VUjtqzctJeSjaOPIJL+
+      wvrXXcAkCYZ9QKf0sqlUWcIRy90nqrD5sL/rHAjNjxQ3lqIOj7yWOgty4LUzFQNr
+      FHiyd3T6
+      -----END CERTIFICATE-----
+    sslPrivateKey: |
+      -----BEGIN RSA PRIVATE KEY-----
+      MIICXwIBAAKBgQD1TiBrxvDBW5KovsrXQR1WxBnXuI2gqYZrxpvPf+CrNK/tONVb
+      EueVzWJx7MV05YdRYgdinG6w2996YL7gCGKXADtiNIKhnkaEtoTbMc3BXZIEmZ9b
+      pgwHqBOGwgE66rjfdyjHMP3KGOY2nFH2/T9gkM7ZEntqPkFrSGlmALyN2wIDAQAB
+      AoGBAPBvfz+kYt5iz0EuoMqTPBqLY3kZn1fWUbbZmGatxJyKq9UsW5NE2FDwWomn
+      tXJ6d0PBfdOd2LDpEgZ1RSF5lobXn2m2+YeEso7A7yMiBRW8CIrkUn8wVA0s42t+
+      osElfvj73G2ZjCqQm6BLCjtFYnalmZIzfOCB26xRWaf0MJ7hAkEA/XaqnosJfmRp
+      kmvto81LEvjVVlSvpo+6rt66ykywEv9daHWZZBrrwVz3Iu4oXlwPuF8bcO8JMLRf
+      OH98T1+1PQJBAPfCj0r3fRhmBZMWqf2/tbeQPvIQzqSXfYroFgnKIKxVCV8Bkm3q
+      1rP4c0XDHEWYIwvMWBTOmVSZqfSxtwIicPcCQQDCcRqK7damo5lpvmpb0s3ZDBN9
+      WxI1EOYB6NQbBaG9sTGTRUQbS5u4hv0ASvulB7L3md6PUJEYUAcMbKCMs7txAkEA
+      7C8pwHJba0XebJB/bqkxxpKYntPM2fScNi32zFBGg2HxNANgnq3vDNN8t/U+X02f
+      oyCimvs0CgUOknhTmJJSkwJBAPaI298JxTnWncC3Zu7d5QYCJXjU403Aj4LdcVeI
+      6A15MzQdj5Hm82vlmpC4LzXofLjiN4E5ZLluzEw+1TjRE7c=
+      -----END RSA PRIVATE KEY-----
     admin:
       client_secret: admin-secret
-    authentication:
-      policy:
-        countFailuresWithinSeconds: null
-        lockoutAfterFailures: null
-        lockoutPeriodSeconds: null
-    catalina_opts: -Xmx192m -XX:MaxPermSize=128m
     cc:
       client_secret: cc-secret
     clients:
@@ -3495,9 +3656,91 @@ properties:
         authorities: routing.routes.read,routing.router_groups.read
         authorized-grant-types: client_credentials,refresh_token
         secret: tcp-router-secret
-    database: null
+    client:
+      autoapprove:
+        - login
+        - admin
     issuer: https://uaa.bosh-lite.com
+    authentication:
+      policy:
+        lockoutAfterFailures: 10
+        countFailuresWithinSeconds: 300
+        lockoutPeriodSeconds: 3600
+        global:
+          lockoutAfterFailures: 20
+          countFailuresWithinSeconds: 200
+          lockoutPeriodSeconds: 2600
+    password:
+      policy:
+        minLength: 10
+        maxLength: 20
+        requireUpperCaseCharacter: 1
+        requireLowerCaseCharacter: 1
+        expirePasswordInMonths: 6
+        global:
+          minLength: 20
+          maxLength: 200
+          requireUpperCaseCharacter: 2
+          requireLowerCaseCharacter: 2
+          expirePasswordInMonths: 2
+    disableInternalAuth: true
+    disableInternalUserManagement: true
+    authorities:
+      - openid
+      - scim.me
+      - cloud_controller.read
+      - cloud_controller.write
+      - cloud_controller_service_permissions.read
     jwt:
+      policy:
+        accessTokenValiditySeconds: 3600
+        refreshTokenValiditySeconds: 7200
+        key-1:
+          signingKey: |
+            -----BEGIN RSA PRIVATE KEY-----
+            AAACXgIBAAKBgQDfTLadf6QgJeS2XXImEHMsa+1O7MmIt44xaL77N2K+J/JGpfV3
+            AnkyB06wFZ02sBLB7hko42LIsVEOyTuUBird/3vlyHFKytG7UEt60Fl88SbAEfsU
+            JN1i1aSUlunPS/NCz+BKwwKFP9Ss3rNImE9Uc2LMvGy153LHFVW2zrjhTwIDAQAB
+            AoGBAJDh21LRcJITRBQ3CUs9PR1DYZPl+tUkE7RnPBMPWpf6ny3LnDp9dllJeHqz
+            a3ACSgleDSEEeCGzOt6XHnrqjYCKa42Z+Opnjx/OOpjyX1NAaswRtnb039jwv4gb
+            RlwT49Y17UAQpISOo7JFadCBoMG0ix8xr4ScY+zCSoG5v0BhAkEA8llNsiWBJF5r
+            LWQ6uimfdU2y1IPlkcGAvjekYDkdkHiRie725Dn4qRiXyABeaqNm2bpnD620Okwr
+            sf7LY+BMdwJBAOvgt/ZGwJrMOe/cHhbujtjBK/1CumJ4n2r5V1zPBFfLNXiKnpJ6
+            J/sRwmjgg4u3Anu1ENF3YsxYabflBnvOP+kCQCQ8VBCp6OhOMcpErT8+j/gTGQUL
+            f5zOiPhoC2zTvWbnkCNGlqXDQTnPUop1+6gILI2rgFNozoTU9MeVaEXTuLsCQQDC
+            AGuNpReYucwVGYet+LuITyjs/krp3qfPhhByhtndk4cBA5H0i4ACodKyC6Zl7Tmf
+            oYaZoYWi6DzbQQUaIsKxAkEA2rXQjQFsfnSm+w/9067ChWg46p4lq5Na2NpcpFgH
+            waZKhM1W0oB8MX78M+0fG3xGUtywTx0D4N7pr1Tk2GTgNw==
+            -----END RSA PRIVATE KEY-----
+          verificationKey: |
+            -----BEGIN PUBLIC KEY-----
+            AAACXgIBAAKBgQDfTLadf6QgJeS2XXImEHMsa+1O7MmIt44xaL77N2K+J/JGpfV3
+            AnkyB06wFZ02sBLB7hko42LIsVEOyTuUBird/3vlyHFKytG7UEt60Fl88SbAEfsU
+            JN1i1aSU
+            -----END PUBLIC KEY-----
+        key-2:
+          signingKey: |
+            -----BEGIN RSA PRIVATE KEY-----
+            BBBCXgIBAAKBgQDfTLadf6QgJeS2XXImEHMsa+1O7MmIt44xaL77N2K+J/JGpfV3
+            AnkyB06wFZ02sBLB7hko42LIsVEOyTuUBird/3vlyHFKytG7UEt60Fl88SbAEfsU
+            JN1i1aSUlunPS/NCz+BKwwKFP9Ss3rNImE9Uc2LMvGy153LHFVW2zrjhTwIDAQAB
+            AoGBAJDh21LRcJITRBQ3CUs9PR1DYZPl+tUkE7RnPBMPWpf6ny3LnDp9dllJeHqz
+            a3ACSgleDSEEeCGzOt6XHnrqjYCKa42Z+Opnjx/OOpjyX1NAaswRtnb039jwv4gb
+            RlwT49Y17UAQpISOo7JFadCBoMG0ix8xr4ScY+zCSoG5v0BhAkEA8llNsiWBJF5r
+            LWQ6uimfdU2y1IPlkcGAvjekYDkdkHiRie725Dn4qRiXyABeaqNm2bpnD620Okwr
+            sf7LY+BMdwJBAOvgt/ZGwJrMOe/cHhbujtjBK/1CumJ4n2r5V1zPBFfLNXiKnpJ6
+            J/sRwmjgg4u3Anu1ENF3YsxYabflBnvOP+kCQCQ8VBCp6OhOMcpErT8+j/gTGQUL
+            f5zOiPhoC2zTvWbnkCNGlqXDQTnPUop1+6gILI2rgFNozoTU9MeVaEXTuLsCQQDC
+            AGuNpReYucwVGYet+LuITyjs/krp3qfPhhByhtndk4cBA5H0i4ACodKyC6Zl7Tmf
+            oYaZoYWi6DzbQQUaIsKxAkEA2rXQjQFsfnSm+w/9067ChWg46p4lq5Na2NpcpFgH
+            waZKhM1W0oB8MX78M+0fG3xGUtywTx0D4N7pr1Tk2GTgNw==
+            -----END RSA PRIVATE KEY-----
+          verificationKey: |
+            -----BEGIN PUBLIC KEY-----
+            BBBCXgIBAAKBgQDfTLadf6QgJeS2XXImEHMsa+1O7MmIt44xaL77N2K+J/JGpfV3
+            AnkyB06wFZ02sBLB7hko42LIsVEOyTuUBird/3vlyHFKytG7UEt60Fl88SbAEfsU
+            JN1i1aSU
+            -----END PUBLIC KEY-----
       signing_key: |+
         -----BEGIN RSA PRIVATE KEY-----
         MIICXAIBAAKBgQDHFr+KICms+tuT1OXJwhCUmR2dKVy7psa8xzElSyzqx7oJyfJ1
@@ -3521,8 +3764,6 @@ properties:
         qHxf+ZH9BL1gk9Y6kCnbM5R60gfwjyW1/dQPjOzn9N394zd2FJoFHwdq9Qs0wBug
         spULZVNRxq7veq/fzwIDAQAB
         -----END PUBLIC KEY-----
-    ldap: null
-    login: null
     newrelic:
       production:
         agent_enabled: true
@@ -3563,17 +3804,93 @@ properties:
           stack_trace_threshold: 0.5
           top_n: 20
           transaction_threshold: apdex_f
-    no_ssl: null
     port: 8080
-    require_https: null
-    restricted_ips_regex: 10\.\d{1,3}\.\d{1,3}\.\d{1,3}|192\.168\.\d{1,3}\.\d{1,3}|169\.254\.\d{1,3}\.\d{1,3}|127\.\d{1,3}\.\d{1,3}\.\d{1,3}|172\.1[6-9]{1}\.\d{1,3}\.\d{1,3}|172\.2[0-9]{1}\.\d{1,3}\.\d{1,3}|172\.3[0-1]{1}\.\d{1,3}\.\d{1,3}
     scim:
-      external_groups: null
       groups: additionalgroup1,additionalgroup2
       userids_enabled: true
+      user:
+        override: false
+      userids_enabled: false
       users:
-      - admin|admin|scim.write,scim.read,openid,cloud_controller.admin,clients.read,clients.write,doppler.firehose,routing.router_groups.read
-    spring_profiles: null
+        - name: username1
+          groups:
+          - group1
+          - group2
+          password: password1
+        - name: username2
+          email: email2
+          firstName: first name2
+          groups:
+          - group1
+          - group2
+          lastName: lastName2
+          origin: ldap
+          password: password2
+        - admin|admin|scim.write,scim.read,openid,cloud_controller.admin,clients.read,clients.write,doppler.firehose,routing.router_groups.read
+      external_groups:
+        origin1:
+          external_group1:
+            - internal_group1
+            - internal_group2
+            - internal_group3
+          external_group2:
+            - internal_group2
+            - internal_group4
+        origin2:
+          external_group3:
+            - internal_group3
+            - internal_group4
+            - internal_group5
+      groups:
+        added_group_1: "Group 1 description"
+        added_group_2: "Group 2 description"
+    database:
+      max_connections: 200
+      max_idle_connections: 20
+      remove_abandoned: true
+      abandoned_timeout: 600
+      log_abandoned: true
+      case_insensitive: true
+    ldap:
+      enabled: true
+      profile_type: search-and-bind
+      url: ldap://my-ldap-url
+      userDN: ldap-user
+      userPassword: ldap-password
+      searchBase: ""
+      searchFilter: username={0}
+      sslCertificate: ~
+      sslCertificateAlias: ~
+      mailAttributeName: mail
+      mailSubstituteOverridesLdap: false
+      referral: follow
+      groups:
+        searchBase: ""
+        groupRoleAttribute: ~
+        groupSearchFilter: member={0}
+        searchSubtree: true
+        maxSearchDepth: 10
+      emailDomain:
+        - ldap-email-whitelist-domain.org
+      attributeMappings:
+        given_name: givenName
+        family_name: sn
+        phone_number: telephoneNumber
+        user:
+          attribute:
+            name-of-attribute-in-id-token: name-of-attribute-in-ldap-record
+            name-of-other-attribute-in-id-token: name-of-other-attribute-in-ldap-record
+      externalGroupsWhitelist:
+        - external_group1
+        - external_group2
+    servlet:
+      session-cookie:
+        secure: false
+        http-only: true
+        max-age: 600
+        name: TESTCOOKIE
+        comment: Random comment
+
     ssl:
       port: 8443
     sslCertificate: |+
@@ -3631,7 +3948,6 @@ properties:
       /6wtWeX8QMBcZ6ufxs0VgxPv4P8jczrzqxgszLUK8hdnZEL7+xk=
       -----END RSA PRIVATE KEY-----
     url: https://uaa.bosh-lite.com
-    user: null
     zones:
       internal:
         hostnames:
