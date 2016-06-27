@@ -884,6 +884,7 @@ properties:
       url: ~
 
     smtp:
+      <<: (( merge || nil ))
       host: ~
       port: ~
       user: ~
