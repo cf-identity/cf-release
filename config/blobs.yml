@@ -51,14 +51,6 @@ golang/go1.5.4.linux-amd64.tar.gz:
   object_id: a3831241-348f-478b-836c-f86962dcfc79
   sha: 4c919c3390e86e557a8019ea644e835bc493be2a
   size: 80180116
-openjdk/openjdk-1.8.0_91-x86_64-trusty.tar.gz:
-  object_id: 7f2bff0a-affc-4a65-8665-4d284fde6a45
-  sha: 69c612c7f783aad33f4d73ec9b44e1a2ee50f386
-  size: 78278698
-openjdk/openjdk-1.8.0_91-x86_64-mountainlion.tar.gz:
-  object_id: 27d58881-9532-4c79-a12e-bb1dab3314c3
-  sha: 9e916262cf92d6ca0b09f9261d30aeca05f214d7
-  size: 75516939
 libmariadb/libmariadb-5.5.36.tar.xz:
   object_id: 4d6e5c2c-76be-4df0-9fdd-4eea3b3563a2
   sha: 4985fd30ffd60de12770153346b4485cd5dcb7ad
@@ -159,3 +151,15 @@ staticfile-buildpack/staticfile_buildpack-cached-v1.3.10.zip:
   object_id: 8817deeb-3799-4ea3-96a1-4c282b1f2bd0
   sha: b476477d537f3b4e29b121b7cd4fde0f57bd730f
   size: 2658753
+openjdk/openjdk-1.8.0_101-x86_64-trusty.tar.gz:
+  object_id: af292af2-8e47-487a-8dfd-c7fd0c04caec
+  sha: d77ee059e289ae52fb87812f1a2932268427dc26
+  size: 77696717
+openjdk/openjdk-1.8.0_101-x86_64-mountainlion.tar.gz:
+  object_id: c3dab272-8db3-4bd2-8836-f06e63640a9e
+  sha: d9374652844bfd7bcdce8f8b605fb57fd76c9e36
+  size: 75550921
+uaa/apache-tomcat-8.0.36.tar.gz:
+  object_id: b142bb5b-e401-4946-b872-433c91a6a8d3
+  sha: c711970918f4c0ebd120cf35605795c416e342c8
+  size: 9277365
