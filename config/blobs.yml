@@ -47,10 +47,10 @@ uaa/newrelic.jar:
   object_id: 2b9d1b59-bc86-4089-95ba-2c0374fe3737
   sha: a5070963fc84bea27acc1d492cb9e3143f0c4715
   size: 7064901
-uaa/apache-tomcat-7.0.61.tar.gz:
-  object_id: fdad7b89-61f5-4cd1-a003-49c4d872412b
-  sha: 98ccbc95d029291e81bf818879ec8a0aa14465df
-  size: 8816567
+uaa/apache-tomcat-8.0.39.tar.gz:
+  object_id: 2166a182-9111-48af-87c5-34cc06f68cac
+  sha: 18c54a81e05df39dec9ac02b143875a29b5502d5
+  size: 9304967
 postgres/postgresql-9.4.2.tar.gz:
   object_id: 4d807bf7-94bc-449f-a0c3-549642df3085
   sha: 7a70474f9b44fea1b345e48bd5e4418bccf41f3f
