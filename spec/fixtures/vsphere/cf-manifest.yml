@@ -1615,8 +1615,8 @@ properties:
     clients:
       cc_routing:
         authorities: routing.router_groups.read
-        authorized-grant-types: client_credentials
         secret: CC_ROUTING_SECRET
+        authorized-grant-types: client_credentials
       cc-service-dashboards:
         authorities: clients.read,clients.write,clients.admin
         authorized-grant-types: authorization_code,client_credentials
@@ -1637,6 +1637,7 @@ properties:
         authorities: uaa.resource
         override: true
         secret: DOPPLER_SECRET
+        authorized-grant-types: client_credentials
       gorouter:
         authorities: routing.routes.read
         authorized-grant-types: client_credentials,refresh_token
